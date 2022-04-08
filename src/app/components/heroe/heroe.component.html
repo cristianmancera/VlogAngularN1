@@ -1,0 +1,24 @@
+
+<h1 class="animated fadeIn">{{heroe.nombre | uppercase}} <small>({{heroe.aparicion | date:'y'}})</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast">
+    <div class="col-md-4 centrar">
+        <img src="{{heroe.img}}" alt="" class="imagenHeroe">
+        <br><br>
+        <div class="d-grid gap-2">
+            <a class="btn btn-outline-primary" [routerLink]="['/heroes']">Regresar</a>
+        </div>
+    </div>
+
+    <div class="col-md-8 marvel">
+        <h3>{{heroe.nombre}}</h3>
+        <p>{{heroe.bio}}</p>
+        <div *ngIf="validarCasa(heroe.casa)" class="centrar tamañoMax">
+            <img src="assets/img/marvel.png" alt="" class="logoCasa">
+        </div>
+        <div *ngIf="validarCasa(heroe.casa)==false" class="centrar tamañoMax">
+            <img src="assets/img/dc.png" alt="" class="logoCasa">
+        </div>
+    </div>
+</div>
